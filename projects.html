@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Website</title>
+    <style>
+        body { font-family: Poppins, sans-serif; margin: 0; padding: 0; text-align: center; }
+        header { background: #c3d7ff; color: rgb(0, 0, 0); padding: 20px; }
+        header nav a { color: rgb(0, 0, 0); margin: 0 15px; text-decoration: none; font-weight: bold; }
+        header nav a:hover { color: #f39c12; }
+        section { padding: 60px 20px; }
+        .btn { display: inline-block; padding: 10px 20px; background: #f39c12; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        .btn:hover { background: #e67e22; }
+        .projects { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
+        .project { width: 250px; border: 1px solid #ccc; border-radius: 10px; padding: 10px; }
+        .project img { width: 100%; height: 150px; object-fit: cover; }
+        footer { background: #043eaa; color: white; padding: 20px; }
+    </style>
+    
+        
+</head>
+<body>
+
+<header>
+    <h1>Service</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service | College E-Library</title>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Enter Your Student PIN</h2>
+    <input type="text" id="pin" placeholder="Enter PIN like 23634cm084">
+    <button onclick="checkPin()">Submit</button>
+
+    <div id="result"></div>
+    <div id="downloads"></div>
+  </div>
+
+  <script>
+    function checkPin() {
+      const pin = document.getElementById('pin').value.trim();
+      const result = document.getElementById('result');
+      const downloads = document.getElementById('downloads');
+
+      result.innerHTML = "";
+      downloads.innerHTML = "";
+
+      const pinPattern = /^23\d{3}cm\d{3}$/i;
+
+      if (!pinPattern.test(pin)) {
+        result.innerHTML = "❌ Invalid PIN format!";
+        return;
+      }
+
+      const studentNum = parseInt(pin.slice(-3));
+      let semester = "";
+
+      if (studentNum >= 1 && studentNum <= 100) semester = "1st Semester";
+      else if (studentNum >= 101 && studentNum <= 200) semester = "2nd Semester";
+      else if (studentNum >= 201 && studentNum <= 300) semester = "3rd Semester";
+      else if (studentNum >= 301 && studentNum <= 400) semester = "4th Semester";
+      else if (studentNum >= 401 && studentNum <= 500) semester = "5th Semester";
+      else {
+        result.innerHTML = "❌ No record found for this PIN!";
+        return;
+      }
+
+      result.innerHTML = `✅ Detected: ${semester}`;
+
+      const semesterFiles = {
+        "1st Semester": [
+          { name: "Applied Mathematics - I", file: "pdfs/sem1_math.pdf" },
+          { name: "Basic Electrical Engineering", file: "pdfs/sem1_eee.pdf" },
+          { name: "Engineering Physics", file: "pdfs/sem1_physics.pdf" },
+        ],
+        "2nd Semester": [
+          { name: "Applied Mathematics - II", file: "pdfs/sem2_math.pdf" },
+          { name: "Programming in C", file: "pdfs/sem2_cprog.pdf" },
+          { name: "Digital Electronics", file: "pdfs/sem2_digital.pdf" },
+        ],
+        "3rd Semester": [
+          { name: "Data Structures", file: "pdfs/sem3_ds.pdf" },
+          { name: "Computer Networks", file: "pdfs/sem3_cn.pdf" },
+          { name: "Database Management Systems", file: "pdfs/sem3_dbms.pdf" },
+        ],
+        "4th Semester": [
+          { name: "Operating Systems", file: "pdfs/sem4_os.pdf" },
+          { name: "Java Programming", file: "pdfs/sem4_java.pdf" },
+          { name: "Software Engineering", file: "pdfs/sem4_se.pdf" },
+        ],
+        "5th Semester": [
+          { name: "Web Development", file: "pdfs/sem5_webdev.pdf" },
+          { name: "Machine Learning Basics", file: "pdfs/sem5_ml.pdf" },
+          { name: "Project Work Guide", file: "pdfs/sem5_project.pdf" },
+        ]
+      };
+
+      if (semesterFiles[semester]) {
+        let filesHTML = "<h3>📚 Available Textbooks:</h3><ul>";
+        semesterFiles[semester].forEach(file => {
+          filesHTML += `<li><a href="${file.file}" target="_blank">${file.name}</a></li>`;
+        });
+        filesHTML += "</ul>";
+        downloads.innerHTML = filesHTML;
+      }
+    }
+  </script>
+</body>
+</html>
+ <b>To Connect With Us Go to <a href="contact.html" class="btn"><b>Contact</b></a> Page.</b>
+
+</section>
+
+<footer>
+    &copy; 2025 My Professional Website
+</footer>
+
+</body>
+</html>
+
